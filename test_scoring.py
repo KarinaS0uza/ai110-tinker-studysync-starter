@@ -11,5 +11,11 @@ def test_session_rating_boundary_90_is_great():
     assert session_rating(90) == "Great"
 
 
-# TODO: add at least one more test, e.g. a boundary case for "Skip" (a score
-# of 59) or the exact boundary for "Good" (a score of 80).
+def test_session_rating_boundary_80_is_good():
+    assert session_rating(80) == "Good"
+
+
+# Part 3: breaker inputs tried in a Python shell; preserve existing behavior.
+# -1 returned "Skip"; flag out of scope because negative scores are outside 0-100.
+# 101 returned "Great"; flag out of scope because it exceeds the score range.
+# 87.5 returned "Good"; flag out of scope because this activity uses integer scores.
